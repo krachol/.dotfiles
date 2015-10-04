@@ -77,3 +77,7 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+" Allways start with NERDTree, but keep the cursor in an editor window
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
