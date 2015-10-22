@@ -70,6 +70,10 @@ set expandtab
 colorscheme solarized
 set background=dark
 
+"KEYBOARD MAPPINGS
+
+autocmd FileType c map <F5> :!gcc -Wall -pedantic % -o Program<CR>
+
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
