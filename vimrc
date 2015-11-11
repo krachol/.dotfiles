@@ -3,8 +3,21 @@ execute pathogen#infect()
 
 " Standard commands
 
+" Unite enabling
+let unite_source_history_yank_enable = 1
+try
+  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+catch
+endtry
+
+" search a file in the filetree
+nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
+" reset not it is <C-l> normally
+:nnoremap <space>r <Plug>(unite_restart)"
+
 " Enable line numbers
-set number 
+set relativenumber 
 
 " Enable syntax highlitghing
 syntax on
@@ -82,6 +95,5 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" Allways start with NERDTree, but keep the cursor in an editor window
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
