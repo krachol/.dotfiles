@@ -11,6 +11,8 @@ try
 catch
 endtry
 
+let g:ycm_python_binary_path = '/usr/bin/python3'
+
 " search a file in the filetree
 nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
 " reset not it is <C-l> normally
@@ -86,6 +88,7 @@ set background=dark
 "KEYBOARD MAPPINGS
 
 autocmd FileType c map <F5> :!gcc -Wall -pedantic % -o Program<CR>
+autocmd FileType python map <F5> :!<C-b>0 python %<CR>
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
@@ -96,4 +99,9 @@ map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+let g:ycm_warning_symbol = "w>"
+let g:ycm_error_symbol = "e>"
+
+vn // y:StackOverflow <C-R>"<CR>
 
