@@ -88,7 +88,7 @@ set background=dark
 "KEYBOARD MAPPINGS
 
 autocmd FileType c map <F5> :!gcc -Wall -pedantic % -o Program<CR>
-autocmd FileType python map <F5> :!<C-b>0 python %<CR>
+autocmd FileType python map <F5> :Dispatch python %<CR>
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
@@ -105,3 +105,8 @@ let g:ycm_error_symbol = "e>"
 
 vn // y:StackOverflow <C-R>"<CR>
 
+" Change window navigation keys
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
