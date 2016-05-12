@@ -37,9 +37,6 @@
 [submodule "gnome-terminal-colors-solarized"]
         path = gnome-terminal-colors-solarized
         url = https://github.com/Anthony25/gnome-terminal-colors-solarized
-[submodule "tmux-colors-solarized"]
-        path = tmux-colors-solarized
-        url = https://github.com//tmux-colors-solarized.git
 [submodule "tmux-solarized"]
         path = tmux-solarized
         url = https://github.com/seebi/tmux-solarized.git
@@ -49,3 +46,6 @@
 [submodule "vim/bundle/vim-stackoverflow"]
  	path = vim/bundle/vim-stackoverflow
  	url = https://github.com/mickaobrien/vim-stackoverflow.git
+[submodule "tmux-colors-solarized"]
+ 	path = tmux-colors-solarized
+ 	url = https://github.com/seebi/tmux-colors-solarized.git
