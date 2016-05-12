@@ -31,3 +31,21 @@
 [submodule "vim/bundle/vim-tmux-navigator"]
 	path = vim/bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "dircolors-solarized"]
+        path = dircolors-solarized
+        url = https://github.com/seebi/dircolors-solarized.git
+[submodule "gnome-terminal-colors-solarized"]
+        path = gnome-terminal-colors-solarized
+        url = https://github.com/Anthony25/gnome-terminal-colors-solarized
+[submodule "tmux-colors-solarized"]
+        path = tmux-colors-solarized
+        url = https://github.com//tmux-colors-solarized.git
+[submodule "tmux-solarized"]
+        path = tmux-solarized
+        url = https://github.com/seebi/tmux-solarized.git
+[submodule "vim/bundle/vim-dispatch"]
+        path = vim/bundle/vim-dispatch
+        url = https://github.com/tpope/vim-dispatch.git
+[submodule "vim/bundle/vim-stackoverflow"]
+ 	path = vim/bundle/vim-stackoverflow
+ 	url = https://github.com/mickaobrien/vim-stackoverflow.git
