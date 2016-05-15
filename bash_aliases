@@ -6,4 +6,4 @@ if [ -f ~/.dir_aliases ]; then
 fi
 
 alias v="vi"
-alias s="ssh"
+alias s="sudo"
