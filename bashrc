@@ -119,3 +119,4 @@ fi
 export EDITOR='vi'
 
 [[ $TERM != "screen" ]] && exec tmux
+CDPATH=~/.paths
