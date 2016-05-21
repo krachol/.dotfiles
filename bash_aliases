@@ -7,3 +7,8 @@ fi
 
 alias v="vi"
 alias s="sudo"
+alias sma="sudo mount -a"
+alias svi="sudo vi"
+alias sapt="sudo apt-get"
+alias sapti="sudo apt-get install"
+alias saptar="sudo apt-add-repository"
