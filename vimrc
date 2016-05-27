@@ -105,11 +105,5 @@ let g:ycm_error_symbol = "e>"
 
 vn // y:StackOverflow <C-R>"<CR>
 
-" Change window navigation keys
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
