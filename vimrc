@@ -2,24 +2,10 @@
 execute pathogen#infect()
 
 " Standard commands
-
-" Unite enabling
-let unite_source_history_yank_enable = 1
-try
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
-catch
-endtry
-
 let g:ycm_python_binary_path = '/usr/bin/python3'
 
-" search a file in the filetree
-nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
-" reset not it is <C-l> normally
-:nnoremap <space>r <Plug>(unite_restart)"
-
 " Enable line numbers
-set relativenumber 
+set relativenumber number
 
 " Enable syntax highlitghing
 syntax on
@@ -64,16 +50,13 @@ set visualbell
 " Visual bell does nothing
 set t_vb=
 
-" Use mouse in every mode
-set mouse=a
-
 " Set command line height to 2
 set cmdheight=2
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
-" Use <F11> to toggle between 'paste' and 'nopaste'
+" Use <F10> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F10>
 
 " Indentation options
@@ -87,23 +70,74 @@ set background=dark
 
 "KEYBOARD MAPPINGS
 
-autocmd FileType c map <F5> :!gcc -Wall -pedantic % -o Program<CR>
-autocmd FileType python map <F5> :Dispatch python %<CR>
+autocmd FileType c map <F5> :!/usr/bin/gcc -Wall -pedantic % -o Program<CR>
+autocmd FileType cpp set makeprg=cd\ build\ &&\ /usr/bin/make
+autocmd FileType cpp map <F5> :make run<CR>
+autocmd FileType cpp map <F4> :make<CR>
+autocmd FileType python map <F5> :w<CR> :Dispatch python %<CR>
+autocmd FileType perl :nnoremap <F5> :w<cr>:!/usr/bin/perl -w %:p<CR>
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
-  
+
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <leader>l :nohl<CR>
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 let g:ycm_warning_symbol = "w>"
 let g:ycm_error_symbol = "e>"
 
-vn // y:StackOverflow <C-R>"<CR>
+vnoremap // y:StackOverflow <C-R>"<CR>
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+" disable arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+let maplocalleader="<space>"
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap K d$O<esc>p
+nnoremap <leader>j d$o<esc>p
+
+nnoremap H 0
+nnoremap L $
+
+nnoremap <leader>sif :vimgrep // **/*<left><left><left><left><left><left>
+
+au bufReadPost quickfix :nnoremap <localleader>n :cne<cr>
+au bufReadPost quickfix :nnoremap <localleader>p :cpre<cr>
+
+au FileType python :iabbrev pythonprog #!/usr/bin/python<cr><cr>def main():<cr><cr><cr><backspace>if __name__ == "__main__":<cr>main()<up><up><up><tab>
+
+nnoremap <leader>et :vsplit ~/.tmux.conf<cr>
+nnoremap <leader>st :!tmux source ~/.tmux.conf<cr>
+
+iabbrev perlprog #!/usr/bin/perl
+
+nnoremap <F6> :set ft=perl<cr>i#!/usr/bin/perl<esc>o<esc>x
+
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256

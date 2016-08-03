@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "vim/bundle/unite.vim"]
 	path = vim/bundle/unite.vim
 	url = https://github.com/Shougo/unite.vim.git
@@ -49,3 +46,15 @@
 [submodule "tmux-colors-solarized"]
  	path = tmux-colors-solarized
  	url = https://github.com/seebi/tmux-colors-solarized.git
+[submodule "vim/bundle/vim-polyglot"]
+	path = vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "vim/bundle/YCM-Generator"]
+	path = vim/bundle/YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git
+[submodule "tpm"]
+	path = tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git

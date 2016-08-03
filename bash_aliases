@@ -13,3 +13,7 @@ alias sapt="sudo apt-get"
 alias sapti="sudo apt-get install"
 alias saptar="sudo apt-add-repository"
 alias saptuu="sudo apt-get update; sudo apt-get upgrade"
+alias sipt="sudo iptables"
+alias addalias="vim ~/.bash_aliases && source ~/.bashrc"
+alias clion="clion.sh"
+

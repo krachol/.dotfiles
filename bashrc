@@ -122,5 +122,7 @@ fi
 
 export EDITOR='vi'
 
-[[ $TERM != "screen" ]] && exec tmux
-CDPATH=~/.paths
+eval $(thefuck --alias) 
+
+[[ $TERM != "screen" ]] && tmux
+
